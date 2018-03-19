@@ -1,5 +1,26 @@
 # thisopenspace challenge
 
+## Instructions
+
+1. Clone this repository: `git clone https://github.com/CiaranDeegan/thisopenspace-challenge.git`
+2. Navigate to the directory of the downloaded repository: `cd thisopenspace-challenge`
+3. Run `npm install` to download dependencies
+4. Run `npm run build` to build JavaScript bundles
+5. Run `node app.js` to start serving the webpage
+6. Open `localhost` in browser
+
+## Description
+
+This solution uses Vue.js to render a reactive grid of open spaces. I chose Vue.js as it is the most recent JavaScript framework I have used.
+
+I did consider the idea of using no framework and got as far as listing all spaces without it, but I decided a framework would help glue the data and logic to the UI.
+
+Spaces are loaded recursively by requesting data from the provided endpoint and using the 404 status as an exit strategy (when the page has no data, thisopenspace returns a 404).
+
+Spaces that have a significant number of views have a small flame icon next to their title to indicate the popularity of the space.
+
+This solution took 3.5-4 hours to complete. Once I got into the swing of the work it came together quite quickly. Initially choosing how to approach the task took the most time.
+
 ## Overview
 
 We have a JSON endpoint that displays information on spaces here https://thisopenspace.com/lhl-test?page=(x) where the (x) is a page number. 
@@ -23,26 +44,3 @@ Stretch Goals (Can take extra time to complete or resubmit at any time):
 - If things actually work
 
 - Library choice - do you choose libraries that you don't need? 
-
-## Instructions
-
-Node.js is used to serve this webpage:
-
-1. Clone this repository `git clone https://github.com/CiaranDeegan/thisopenspace-challenge.git`
-2. Navigate to the directory of the downloaded repository
-3. Run `npm install`
-4. Run `node app.js`
-5. Open `localhost` in browser
-
-## Description
-
-This solution uses Vue.js to render a reactive grid of open spaces. I chose Vue.js as it is the most recent JavaScript framework I have used.
-
-I did consider the idea of using no framework and got as far as listing all spaces without it, but I decided a framework would help glue the data and logic to the UI.
-
-Spaces are loaded recursively by requesting data from the provided endpoint and using the 404 status as an exit strategy (when the page has no data, thisopenspace returns a 404).
-
-Spaces that have a significant number of views have a small flame icon next to their title to indicate the popularity of the space.
-
-This solution took 3.5-4 hours to complete. Once I got into the swing of the work it came together quite quickly. Initially choosing how to approach the task took the most time.
- 
