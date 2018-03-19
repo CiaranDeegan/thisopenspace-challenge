@@ -28,7 +28,7 @@ Stretch Goals (Can take extra time to complete or resubmit at any time):
 
 Node.js is used to serve this webpage:
 
-1. Clone this repository
+1. Clone this repository `git clone https://github.com/CiaranDeegan/thisopenspace-challenge.git`
 2. Navigate to the directory of the downloaded repository
 3. Run `npm install`
 4. Run `node app.js`
