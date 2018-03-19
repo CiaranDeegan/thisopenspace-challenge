@@ -1,0 +1,24 @@
+{
+  "name": "thisopenspace-challenge",
+  "version": "1.0.0",
+  "description": "Coding challenge for thisopenspace",
+  "main": "app.js",
+  "dependencies": {
+    "browserify": "^16.1.1",
+    "express": "^4.16.3",
+    "http": "^0.0.0",
+    "vue": "^2.5.16",
+    "vueify": "^9.4.1",
+    "watchify": "^3.11.0"
+  },
+  "browser": {
+    "vue": "vue/dist/vue.common.js"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "browserify public/js/main.js -o public/js/bundle.js"
+  },
+  "author": "",
+  "license": "ISC"
+}
