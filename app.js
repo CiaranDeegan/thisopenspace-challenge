@@ -1,5 +1,5 @@
 const http = require('http'),
-	express = require('express');
+	express = require('express'),
     app = express(),
     httpServer = http.createServer(app),
     port = 80;
