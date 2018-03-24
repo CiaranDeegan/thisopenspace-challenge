@@ -8,7 +8,7 @@
     <div class="card-content">
         <div class="media">
             <div class="media-content content">
-                <span class="space-icon" v-if="space.views_count > 2000" title="This is a popular space!"><span class="icon has-text-danger"><i class="fas fa-fire"></i></span></span>
+                <span class="space-icon" v-if="isPopular" title="This is a popular space!"><span class="icon has-text-danger"><i class="fas fa-fire"></i></span></span>
                 <span class="is-size-5">{{space.name}}</span>
                 <span class="is-size-7"><p>{{space.address}}</p></span>
             </div>
@@ -29,7 +29,13 @@
 
 <script>
 module.exports = {
-    props: ['space']
+    props: ['space'],
+    computed: {
+        isPopular: function() {
+            //show fire icon if space has over 2000 views
+            return this.space.views_count > 2000;
+        }
+    }
 }
 </script>
 
