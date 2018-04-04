@@ -2,11 +2,11 @@
     <div>
         <h2 class="subtitle is-6">Sort by</h2>
         <button class="button is-info is-outlined" v-on:click="emitSort('id')">ID</button>
-        <button class="button is-info is-outlined" v-on:click="updateSort('capacity')">Capacity</button>
-        <button class="button is-info is-outlined" v-on:click="updateSort('square_footage')">Square Footage</button>
         <button class="button is-info is-outlined" v-on:click="updateSort('views_count')">Views</button>
-        <button class="button is-info is-outlined" v-on:click="updateSort('daily_price')">Daily Price</button>
         <button class="button is-info is-outlined" v-on:click="updateSort('hourly_price')">Hourly Price</button>
+        <button class="button is-info is-outlined" v-on:click="updateSort('daily_price')">Daily Price</button>
+        <button class="button is-info is-outlined" v-on:click="updateSort('square_footage')">Square Footage</button>
+        <button class="button is-info is-outlined" v-on:click="updateSort('capacity')">Capacity</button>
     </div>
 </template>
 
