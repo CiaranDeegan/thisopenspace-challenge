@@ -1,8 +1,5 @@
 <template>
 <div>
-    <h1 class="title">thisopenspace</h1>
-    <h2 class="subtitle is-6">has <strong>{{spaces.length}}</strong> spaces to show you</h2>
-
     <div class="columns" v-for="i in calcRowCount()" :key="i">
         <cell class="column is-one-third" v-for="space of getRowItems(i)" :key="space.id" v-bind:space="space">
         </cell>
@@ -46,6 +43,7 @@ module.exports = {
                 if(status == 200) {
                     spaces.push.apply(spaces, JSON.parse(response).data);
                     pageNum++;
+                    bus.$emit('space-counter', spaces.length);
                     getSpaces(pageNum, spaces, callback);
                 }
                 else {

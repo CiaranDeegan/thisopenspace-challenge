@@ -1,11 +1,11 @@
 const Vue =  require('vue'),
   Grid = require('../components/Grid.vue'),
-  Sorter = require('../components/Sorter.vue');
+  Panel = require('../components/Panel.vue');
 
 new Vue({
   el: '#app',
   components: {
     'grid': Grid,
-    'sorter': Sorter
+    'panel': Panel
   }
 });

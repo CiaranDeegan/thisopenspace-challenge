@@ -1,6 +1,7 @@
 <template>
-    <div>
+    <div class="has-text-right">
         <h2>Sort by</h2>
+        <button class="button is-info" v-on:click="emitSort('id')">ID</button>
         <button class="button is-info" v-on:click="emitSort('capacity')">Capacity</button>
         <button class="button is-info" v-on:click="emitSort('square_footage')">Square Footage</button>
         <button class="button is-info" v-on:click="emitSort('views_count')">Views</button>
@@ -39,3 +40,8 @@ module.exports = {
     }
 };
 </script>
+
+<style scoped>
+
+</style>
+
