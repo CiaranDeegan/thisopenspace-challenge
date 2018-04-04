@@ -15,7 +15,8 @@
 
 <script>
 var HTTPClient = require('../js/request.js'),
-    Cell = require('./Cell.vue');
+    Cell = require('./Cell.vue')
+    bus = require('../js/bus.js');
 
 var baseURL = "https://thisopenspace.com/lhl-test";
 
@@ -29,10 +30,14 @@ module.exports = {
         }
     },
     created() {
+        var component = this;
         //get spaces when data ready (DOM not ready yet, but also not required for this action)
         this.getSpaces(this.queryPageNum, this.spaces, function(spaces) {
-            console.log(spaces);
-        })
+            //enable sort listener only once the spaces have ben retrieved
+            bus.$on('sort-spaces', function(sort) {
+                component.spaces = sort(component.spaces)
+            });
+        });
     },
     methods: {
         getSpaces: function getSpaces(pageNum, spaces, callback) {
