@@ -1,12 +1,12 @@
 <template>
     <div>
-        <h2>Sort by</h2>
-        <button class="button is-info" v-on:click="emitSort('id')">ID</button>
-        <button class="button is-info" v-on:click="emitSort('capacity')">Capacity</button>
-        <button class="button is-info" v-on:click="emitSort('square_footage')">Square Footage</button>
-        <button class="button is-info" v-on:click="emitSort('views_count')">Views</button>
-        <button class="button is-info" v-on:click="emitSort('daily_price')">Daily Price</button>
-        <button class="button is-info" v-on:click="emitSort('hourly_price')">Hourly Price</button>
+        <h2 class="subtitle is-6">Sort by</h2>
+        <button class="button is-info is-outlined" v-on:click="emitSort('id')">ID</button>
+        <button class="button is-info is-outlined" v-on:click="updateSort('capacity')">Capacity</button>
+        <button class="button is-info is-outlined" v-on:click="updateSort('square_footage')">Square Footage</button>
+        <button class="button is-info is-outlined" v-on:click="updateSort('views_count')">Views</button>
+        <button class="button is-info is-outlined" v-on:click="updateSort('daily_price')">Daily Price</button>
+        <button class="button is-info is-outlined" v-on:click="updateSort('hourly_price')">Hourly Price</button>
     </div>
 </template>
 
@@ -27,8 +27,11 @@ module.exports = {
         };
     },
     methods: {
-        emitSort: function(property) {
+        updateSort(property) {
             this.sortProperty = property;
+            this.emitSort(property);
+        },
+        emitSort: function(property) {
             bus.$emit('sort-spaces', this.sortArray);
         },
         sortArray: function(arr) {
@@ -43,6 +46,10 @@ module.exports = {
 
 <style scoped>
 button {
+    margin-bottom: 5px;
+}
+
+.subtitle {
     margin-bottom: 5px;
 }
 </style>
