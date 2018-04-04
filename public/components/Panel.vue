@@ -1,7 +1,7 @@
 <template>
 <div class="columns">
-    <counter class="column"/>
-    <sorter class="column has-text-right"/>
+    <counter class="column is-one-fifth"/>
+    <sorter class="column"/>
 </div>
 </template>
 
@@ -18,4 +18,7 @@ module.exports = {
 </script>
 
 <style scoped>
+div {
+    margin: 5px;
+}
 </style>
