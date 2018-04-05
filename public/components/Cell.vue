@@ -1,4 +1,5 @@
 <template>
+<router-link v-bind:to="'/space/' + space.id">
 <div class="card">
     <div class="card-image">
         <figure class="image is-4by3">
@@ -25,6 +26,7 @@
         </div>
     </div>
 </div>
+</router-link>
 </template>
 
 <script>
