@@ -34,6 +34,12 @@ module.exports = {
             bus.$on('sort-spaces', function(sort) {
                 component.spaces = sort(component.spaces)
             });
+
+            component.spaces.forEach(function(element){
+                if(element.hourly_price == null) {
+                    element.hourly_price = (element.daily_price / 24).toFixed(2);
+                }
+            });
         });
     },
     methods: {
