@@ -40,10 +40,12 @@ module.exports = {
         getSpaces: function getSpaces(pageNum, spaces, callback) {
             //recursively get spaces from thisopenspace's endpoint
             HTTPClient.get(baseURL + "?page=" + pageNum, function(status, response){
-                if(status == 200) {
-                    spaces.push.apply(spaces, JSON.parse(response).data);
-                    pageNum++;
-                    bus.$emit('space-counter', spaces.length);
+                spaces.push.apply(spaces, JSON.parse(response).data);
+                var totalSpaces = JSON.parse(response).total;
+                pageNum++;
+                bus.$emit('space-counter', spaces.length);
+
+                if(spaces.length < totalSpaces) {
                     getSpaces(pageNum, spaces, callback);
                 }
                 else {
